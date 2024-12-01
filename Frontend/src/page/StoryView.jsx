@@ -83,7 +83,7 @@ const sendLike = async (id) => {
       <div className="w-[30%] h-full bg-black max-[800px]:hidden  z-20">
         <Global />
       </div>
-      <div className="w-[70%] h-full bg-black  max-[800px]:w-full overflow-y-scroll scroll z-20 p-5" >
+      <div className="w-[70%] h-full bg-black  max-[800px]:w-full overflow-y-scroll scroll z-20 p-5 pb-10" >
        {post ? [...post].reverse().map((item) => <div key={item._id}>
         <div  className=" border-b-[1px] border-zinc-800 pb-5">
           <div className="flex flex-row items-center gap-2">
