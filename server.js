@@ -15,7 +15,7 @@ app.use(CookieParser());
 app.use(cors(
     {
      origin: "https://chat.hyweb.in",
-     methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+     methods: ['GET', 'POST', 'PUT', 'DELETE'],
      credentials: true
 
   }
@@ -39,9 +39,9 @@ app.use("/api/message",messageRoutes)
 if (process.env.NODE_ENV === 'production') {
     const dirPath = path.resolve();
 
-    app.use(express.static('./Chat-app/dist'))
+    app.use(express.static('./Frontend/dist'))
     app.get('*', (req,res) => {
-        res.sendFile(path.resolve(dirPath, "./Chat-app/dist","index.html"));
+        res.sendFile(path.resolve(dirPath, "./Frontend/dist","index.html"));
     })
 }
 

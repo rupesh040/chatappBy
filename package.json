@@ -6,7 +6,7 @@
   "scripts": {
     "dev":" nodemon server.js",
     "server": "nodemon server.js",
-    "build":"npm install && npm install --prefix Chat-app && npm run build  --prefix Chat-app"
+    "build":"npm install && npm install --prefix Frontend && npm run build  --prefix Frontend"
   },
   "author": "",
   "license": "ISC",

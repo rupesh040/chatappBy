@@ -1,0 +1,506 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{overflow: hidden;}
+*{
+    box-sizing: border-box;
+}
+.glass{
+background: rgba(255, 255, 255, 0.7);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(6.9px);
+}
+.btn{
+box-shadow: 0px 0px 0px rgba(3, 7, 18, 0.13),
+  0px 1px 1px rgba(3, 7, 18, 0.12),
+  0px 2px 2px rgba(3, 7, 18, 0.10),
+  0px 4px 4px rgba(3, 7, 18, 0.09),
+  0px 6px 7px rgba(3, 7, 18, 0.08),
+  0px 8px 9px rgba(3, 7, 18, 0.07),
+  0px 11px 13px rgba(3, 7, 18, 0.05),
+  0px 14px 17px rgba(3, 7, 18, 0.04),
+  0px 18px 21px rgba(3, 7, 18, 0.03),
+  0px 22px 26px rgba(3, 7, 18, 0.01);
+}
+.overlay{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 70%, rgba(255,255,255,0.01) 100%);
+}
+.iphone{
+
+box-shadow: 0px 0px 14px rgba(3, 7, 18, 0.28),
+  0px 0px 55px rgba(3, 7, 18, 0.21),
+  0px 0px 123px rgba(3, 7, 18, 0.14),
+  0px 0px 218px rgba(3, 7, 18, 0.07);
+animation: iphone .3s ease-in-out;
+}
+@keyframes iphone {
+    0%{
+        transform: translateY(300px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.message1{
+
+    animation: message .8s ease-in-out;
+    /* animation-delay: .3s; */
+}
+.message2{
+
+    animation: message 1.2s ease-in-out;
+    /* animation-delay: .3s; */
+}
+@keyframes message {
+    0%{
+        transform: translateY(250px);
+        scale: 0.5;
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.text{
+    animation: text .8s ease-in-out;
+}
+
+@keyframes text {
+    0%{
+        transform: translateY(25px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.text2{
+    animation: text2 .8s ease-in-out;
+}
+
+@keyframes text2 {
+    0%{
+        filter: blur(10px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+.name{
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.anime{
+    animation: load .5s ease-in-out;
+}
+@keyframes load {
+    0%{
+        transform: translatey(100%);
+        opacity: 0;
+        filter: blur(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translatey(0%);
+        filter: blur(0px);
+        }
+}
+
+
+
+
+
+
+
+.active{
+    background-color: #18181b;
+    position: relative;
+}
+.active::after{
+    content: "";
+    width: 1px;
+    height: 70%;
+    position: absolute;
+    right: 15px;
+    border-radius: 100%;
+    background-color: white;
+}
+
+
+
+/* From Uiverse.io by barisdogansutcu */ 
+svg {
+    width: 1.25em;
+    transform-origin: center;
+    animation: rotate4 2s linear infinite;
+   }
+   
+   circle {
+    fill: none;
+    stroke: #c95719;
+    stroke-width: 4;
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: dash4 1.5s ease-in-out infinite;
+   }
+   
+   @keyframes rotate4 {
+    100% {
+     transform: rotate(360deg);
+    }
+   }
+   
+   @keyframes dash4 {
+    0% {
+     stroke-dasharray: 1, 200;
+     stroke-dashoffset: 0;
+    }
+   
+    50% {
+     stroke-dasharray: 90, 200;
+     stroke-dashoffset: -35px;
+    }
+   
+    100% {
+     stroke-dashoffset: -125px;
+    }
+   }
+   
+
+
+:root {
+  --shiny-cta-bg: #000000;
+  --shiny-cta-bg-subtle: #1a1818;
+  --shiny-cta-fg: #ffffff;
+  --shiny-cta-highlight: blue;
+  --shiny-cta-highlight-subtle: #8484ff;
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --gradient-angle-offset {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --gradient-percent {
+  syntax: "<percentage>";
+  initial-value: 5%;
+  inherits: false;
+}
+
+@property --gradient-shine {
+  syntax: "<color>";
+  initial-value: white;
+  inherits: false;
+}
+
+.shiny-cta {
+  --animation: gradient-angle linear infinite;
+  --duration: 3s;
+  --shadow-size: 2px;
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline-offset: 4px;
+  padding: 1.25rem 2.5rem;
+  font-family: inherit;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  border-radius: 360px;
+  color: var(--shiny-cta-fg);
+  background: linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg))
+      padding-box,
+    conic-gradient(
+        from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+        transparent,
+        var(--shiny-cta-highlight) var(--gradient-percent),
+        var(--gradient-shine) calc(var(--gradient-percent) * 2),
+        var(--shiny-cta-highlight) calc(var(--gradient-percent) * 3),
+        transparent calc(var(--gradient-percent) * 4)
+      )
+      border-box;
+  box-shadow: inset 0 0 0 1px var(--shiny-cta-bg-subtle);
+
+  &::before,
+  &::after,
+  span::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+  }
+
+  &:active {
+    translate: 0 1px;
+  }
+}
+
+/* Dots pattern */
+.shiny-cta::before {
+  --size: calc(100% - var(--shadow-size) * 3);
+  --position: 2px;
+  --space: calc(var(--position) * 2);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(
+      circle at var(--position) var(--position),
+      white calc(var(--position) / 4),
+      transparent 0
+    )
+    padding-box;
+  background-size: var(--space) var(--space);
+  background-repeat: space;
+  mask-image: conic-gradient(
+    from calc(var(--gradient-angle) + 45deg),
+    black,
+    transparent 10% 90%,
+    black
+  );
+  border-radius: inherit;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Inner shimmer */
+.shiny-cta::after {
+  --animation: shimmer linear infinite;
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    -50deg,
+    transparent,
+    var(--shiny-cta-highlight),
+    transparent
+  );
+  mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+  opacity: 0.6;
+}
+
+.shiny-cta span {
+  z-index: 1;
+
+  &::before {
+    --size: calc(100% + 1rem);
+    width: var(--size);
+    height: var(--size);
+    box-shadow: inset 0 -1ex 2rem 4px var(--shiny-cta-highlight);
+    opacity: 0;
+  }
+}
+
+/* Animate */
+.shiny-cta {
+  --transition: 800ms cubic-bezier(0.25, 1, 0.5, 1);
+  transition: var(--transition);
+  transition-property: --gradient-angle-offset, --gradient-percent,
+    --gradient-shine;
+
+  &,
+  &::before,
+  &::after {
+    animation: var(--animation) var(--duration),
+      var(--animation) calc(var(--duration) / 0.4) reverse paused;
+    animation-composition: add;
+  }
+
+  span::before {
+    transition: opacity var(--transition);
+    animation: calc(var(--duration) * 1.5) breathe linear infinite;
+  }
+}
+
+.shiny-cta:is(:hover, :focus-visible) {
+  --gradient-percent: 20%;
+  --gradient-angle-offset: 95deg;
+  --gradient-shine: var(--shiny-cta-highlight-subtle);
+
+  &,
+  &::before,
+  &::after {
+    animation-play-state: running;
+  }
+
+  span::before {
+    opacity: 1;
+  }
+}
+
+@keyframes gradient-angle {
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes breathe {
+  from,
+  to {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+}
+
+
+
+.custom-loader {
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:conic-gradient(#0000 10%,#1909ff);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 1s infinite linear;
+    
+  }
+  @keyframes s3 {to{transform: rotate(1turn)}}
+
+
+
+
+  .sendmsg{
+    height: scrollbar;
+  }
+
+
+  :root {
+    /*  change this for scaling  */
+      --m: 4rem;
+      
+      --red: #FF6565;
+      --pink: #FF64F9;
+      --purple: #6B5FFF;
+      --blue: #4D8AFF;
+      --green: #5BFF89;
+      --yellow: #FFEE55;
+      --orange: #FF6D1B;
+      
+    }
+
+
+.button {
+  border: 1px solid transparent;
+  position: relative;
+  color: #F3F3F3;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  background:linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),  linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+  background-size: 200%;
+  animation: animate 2s infinite linear;
+}
+
+.button::before {
+  content: '';
+  background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  height: 30%;
+  width: 90%;
+  position: absolute;
+  bottom: -20%;
+  z-index: -5;
+  background-size: 200%;
+  animation: animate 2s infinite linear;
+  filter: blur(calc(0.8 * var(--m)));
+}
+
+@media (max-width: 768px) {
+  .button::before {
+  height: 15%;}
+}
+
+.button:hover, button:hover::before {
+  animation: animate 0.5s infinite linear;
+}
+
+@keyframes animate {
+  0% {background-position: 0}
+  100% {background-position: 200%}
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --m: 2rem;
+  }
+}
+
+
+
+
+.spinner {
+  margin: 0 auto;
+  width: 70px;
+  text-align: center;
+  
+  
+  > div {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 100%;
+    display: inline-block;
+    animation: sk-bouncedelay 1.2s infinite ease-in-out both;
+  }
+  .bounce1 {
+    animation-delay: -0.32s;
+  }
+  .bounce2 {
+    animation-delay: -0.16s;
+  }
+}
+
+@-webkit-keyframes sk-bouncedelay {0%, 80%, 100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes sk-bouncedelay {0%, 80%, 100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+.gridCard{
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
