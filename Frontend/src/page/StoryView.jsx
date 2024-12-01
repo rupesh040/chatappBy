@@ -49,6 +49,19 @@ const sendLike = async (id) => {
   await sendPostLike({setlike: id});
 }
 
+
+  const formatTime = (time) => {
+    return new Date(time).toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+        day: "2-digit",
+        month: "2-digit",
+        year: "2-digit"
+    })
+}
+
+
   return (
     <div className='w-[100%] h-screen bg-zinc-300 flex  overflow-hidden relative' onClick={() => setProfile(true)}>
       <div className="w-5 -rotate-45 h-44 bg-zinc-500 bg-opacity-60 blur-lg  absolute top-20 left-0 z-0"></div>
@@ -75,7 +88,7 @@ const sendLike = async (id) => {
         <div  className=" border-b-[1px] border-zinc-800 pb-5">
           <div className="flex flex-row items-center gap-2">
             <img src={authUser._id === item.senderId ? authUser.profilePic : users.filter((user) => user._id === item.senderId).map(item => {return item.profilePic})  } className="w-10 h-10 bg-white rounded-full "/>
-            <h1 className='text-lg  font-semibold tracking-wide flex flex-col translate-y-1'>{authUser._id === item.senderId ? authUser.fullname : users.filter((user) => user._id === item.senderId).map(item => {return item.fullname})  } <span className='text-[12px] -translate-y-2 font-normal'>yahsdbu</span></h1>
+            <h1 className='text-lg  font-semibold tracking-wide flex flex-col translate-y-1'>{authUser._id === item.senderId ? authUser.fullname : users.filter((user) => user._id === item.senderId).map(item => {return item.fullname})  } <span className='text-[12px] -translate-y-2 font-normal'>{formatTime(item.createAt)}</span></h1>
           </div>
           <div className=' font-normal tracking-wide pl-12'>
             {item.text}
