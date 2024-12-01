@@ -95,7 +95,7 @@ const AI = () => {
 
                 </div> }
                 {!load ? <div className="w-[70%] h-40 rounded-full blur-[100px] opacity-40 max-[800px]:w-[90%] bg-zinc-500 absolute -bottom-20 z-20"></div> : null}
-                <div className="w-full max-w-[600px]  max-[800px]:w-full  absolute  bottom-5 flex justify-center items-center sendmsg flex-col z-50">
+                <div className="w-full max-w-[600px]  max-[800px]:w-full  absolute  bottom-10 flex justify-center items-center sendmsg flex-col z-50">
 
                     <div className={`w-[90%] ${load ? "button" : null} bg-black py-2  text-white bg-opacity-50 border-[1px] border-zinc-800 rounded-xl flex shadow-2xl items-end backdrop-blur-lg relative  sendmsg justify-end`}>
                         <label htmlFor="image">
