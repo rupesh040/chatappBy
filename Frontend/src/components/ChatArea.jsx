@@ -188,7 +188,7 @@ const ChatArea = () => {
             </div>
 
             <div className="w-full h-full   flex flex-col overflow-y-scroll scroll relative bg-[#18181b] scrollBottom scroll-smooth ">
-                <div className="p-5 w-[90%] mx-auto max-[800px]:w-full    grid  gap-10 scroll-smooth pb-40" >
+                <div className="p-5 w-[90%] mx-auto max-[800px]:w-full    grid  gap-10 scroll-smooth pb-80" >
                     {messages.map((item, index) => <>
                         {item.text && (<div className={`inline-block  px-6 rounded-2xl break-words whitespace-normal  py-[6px]    max-w-[50%] ${item.senderId === authUser._id ? "place-self-end bg-[#26292e] text-white rounded-br-none" : "place-self-start bg-zinc-300 rounded-bl-none text-black border-[1px] border-white"}   relative min-w-16`} key={item._id}  >{item.text} <span className={`text-[10px] tracking-wider ${item.senderId === authUser._id ? "right-0" : "left-0"} absolute -bottom-5  text-zinc-500  text-nowrap `}>{formatTime(item.createdAt)}</span>  </div>)}
                         {item.image && (<div  className={`inline-block w-60 rounded-2xl break-words whitespace-normal   max-w-[50%] ${item.senderId === authUser._id ? "place-self-end  text-white rounded-br-none" : "place-self-start  rounded-bl-none text-black "}   relative min-w-16`} key={item._id} > <img src={item.image} onClick={() => { setViewImage(item.image); setDp(true) }} alt="" className='rounded-2xl cursor-pointer' /> <span className={`text-[10px] tracking-wider ${item.senderId === authUser._id ? "right-0" : "left-0"} absolute -bottom-5  text-zinc-500  `}>{formatTime(item.createdAt)}</span>  </div>)}
