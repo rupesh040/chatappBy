@@ -78,7 +78,7 @@ const AI = () => {
 
                     <div className={` ${promtsUser ? "flex" : "hidden"} inline-block  px-6 rounded-xl break-words whitespace-normal  py-[6px]  place-self-end bg-zinc-900 border-[1px] border-zinc-800 text-zinc-300 rounded-br-none relative min-w-16 max-w-[50%] `}>{promtsUser}</div>
 
-                    <div className={`inline-block ${!isResponse ? "flex" : "hidden"}  px-6 rounded-xl break-words whitespace-normal  py-[14px]  place-self-start bg-zinc-900 border-[1px] border-zinc-800 text-white tracking-wide rounded-bl-none relative min-w-16   max-w-[50%]`}>
+                    <div className={`inline-block ${!isResponse || !aiRes ? "flex" : "hidden"}  px-6 rounded-xl break-words whitespace-normal  py-[14px]  place-self-start bg-zinc-900 border-[1px] border-zinc-800 text-white tracking-wide rounded-bl-none relative min-w-16   max-w-[50%]`}>
                         <div class="spinner flex flex-row gap-2">
                             <div class="bounce1"></div>
                             <div class="bounce2"></div>
@@ -95,7 +95,7 @@ const AI = () => {
 
                 </div> }
                 {!load ? <div className="w-[70%] h-40 rounded-full blur-[100px] opacity-40 max-[800px]:w-[90%] bg-zinc-500 absolute -bottom-20 z-20"></div> : null}
-                <div className="w-full max-w-[600px]  max-[800px]:w-full  absolute  bottom-10 flex justify-center items-center sendmsg flex-col z-50">
+                <div className="w-full max-w-[600px]  max-[800px]:w-full  absolute  bottom-20 flex justify-center items-center sendmsg flex-col z-50">
 
                     <div className={`w-[90%] ${load ? "button" : null} bg-black py-2  text-white bg-opacity-50 border-[1px] border-zinc-800 rounded-xl flex shadow-2xl items-end backdrop-blur-lg relative  sendmsg justify-end`}>
                         <label htmlFor="image">
