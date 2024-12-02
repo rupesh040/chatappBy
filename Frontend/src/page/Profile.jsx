@@ -113,15 +113,15 @@ const Profile = () => {
       <div className='w-full  bg-black h-screen relative flex flex-col py-5 gap-5 items-center'>
         <div className="w-[90%] py-5 bg-zinc-900 border-[1px] border-zinc-800 rounded-xl flex flex-col justify-center px-5 gap-5 ">
           <div className="flex flex-row items-center gap-5">
-            <img src={compressedBase64 || authUser.profilePic} className="w-28 border-2 h-28 bg-purple-500 rounded-full" />
+            <img src={compressedBase64 || authUser.profilePic} className="min-w-28 max-w-28 border-2 min-h-28 max-h-28 bg-purple-500 rounded-full" />
             <div className="">
-              <h1 className='text-3xl font-semibold'>{authUser.fullname}</h1>
-              <h1 className='text-lg tracking-wider'>{authUser.email}</h1>
+              <h1 className='text-3xl font-semibold text-white'>{authUser.fullname}</h1>
+              <h1 className='text-lg tracking-wider text-zinc-300'>{authUser.email}</h1>
               <h1 className='bg-gradient-to-r from-purple-500  via-blue-500 to-purple-500 font-bold tracking-wide bg-clip-text text-transparent'>Total Post: {post.filter((items)=>items.senderId === authUser._id).length}</h1>
             </div></div>
           <div className="flex flex-row gap-5">
           {!compressedBase64 ?
-            <label className={` h-full bg-black py-1 px-4 rounded-lg border-[1px] border-zinc-800 cursor-pointer  flex gap-2`} > <i className="ri-edit-line text-zinc-200"></i>Edit Profile <input type="file" hidden onChange={(e) => handleImageUpload(e)} /></label> :
+            <label className={` h-full bg-black py-1 px-4 rounded-lg border-[1px] border-zinc-800 cursor-pointer text-white flex gap-2`} > <i className="ri-edit-line text-zinc-200"></i>Edit Profile <input type="file" hidden onChange={(e) => handleImageUpload(e)} /></label> :
             <div className={`bg-green-800 text-white py-1 px-4 rounded-lg border-[1px] border-zinc-800  cursor-pointer flex flex-row gap-2`} onClick={() => profileSave()}>{isUpdatingProfile ? <svg viewBox="25 25 50 50">
               <circle r="20" cy="50" cx="50"></circle>
             </svg> : null}  save</div>}
@@ -136,7 +136,7 @@ const Profile = () => {
             <div className="  rounded-lg max-w-80 border-[1px] border-zinc-800 p-2 relative">
               <div className='px-5 bg-white bg-opacity-40 backdrop-blur-2xl  absolute text-black top-5 right-5 rounded-full flex justify-center items-center text-[12px]'>{formatTime(item.createdAt)}</div>
               <img src={item.image} className='rounded-lg ' alt="" />
-              <h1>{item.text}</h1>
+              <h1 className='text-white' >{item.text}</h1>
             </div>) :
             <div className=""></div>
             }
