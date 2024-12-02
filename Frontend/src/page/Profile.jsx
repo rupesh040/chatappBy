@@ -113,7 +113,7 @@ const Profile = () => {
       <div className='w-full  bg-black h-screen relative flex flex-col py-5 gap-5 items-center'>
         <div className="w-[90%] py-5 bg-zinc-900 border-[1px] border-zinc-800 rounded-xl flex flex-col justify-center px-5 gap-5 ">
           <div className="flex flex-row items-center gap-5">
-            <img src={compressedBase64 || authUser.profilePic} className="min-w-28 max-w-28 border-2 min-h-28 max-h-28 bg-purple-500 rounded-full" />
+            <img src={compressedBase64 || authUser.profilePic} className="min-w-28 max-w-28 object-cover border-2 min-h-28 max-h-28 bg-purple-500 rounded-full" />
             <div className="">
               <h1 className='text-3xl font-semibold text-white'>{authUser.fullname}</h1>
               <h1 className='text-lg tracking-wider text-zinc-300'>{authUser.email}</h1>
