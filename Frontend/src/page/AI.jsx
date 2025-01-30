@@ -77,9 +77,9 @@ setIsResponse(true);
                 <p className='tracking-wide text-zinc-500 '>Ask me Anything</p></> :
                  <div className={`p-5 w-[90%] max-w-[800px] mx-auto max-[800px]:w-full  overflow-y-scroll scroll  grid  gap-5 scroll-smooth pb-40`}>
 
-                    <div className={` ${promtsUser ? "flex" : "hidden"} inline-block  px-6 rounded-xl break-words whitespace-normal  py-[6px]  place-self-end bg-zinc-900 border-[1px] border-zinc-800 text-zinc-300 rounded-br-none relative min-w-16 max-w-[50%] `}>{promtsUser}</div>
+                    <div className={` ${!promtsUser ? "flex" : "hidden"} inline-block  px-6 rounded-xl break-words whitespace-normal  py-[6px]  place-self-end bg-zinc-900 border-[1px] border-zinc-800 text-zinc-300 rounded-br-none relative min-w-16 max-w-[50%] `}>{promtsUser}</div>
 
-                    <div className={`inline-block ${isResponse ? "flex" : "hidden"}  px-6 rounded-xl break-words whitespace-normal  py-[14px]  place-self-start bg-zinc-900 border-[1px] border-zinc-800 text-white tracking-wide rounded-bl-none relative min-w-16   max-w-[50%]`}>
+                    <div className={`inline-block ${!isResponse ? "flex" : "hidden"}  px-6 rounded-xl break-words whitespace-normal  py-[14px]  place-self-start bg-zinc-900 border-[1px] border-zinc-800 text-white tracking-wide rounded-bl-none relative min-w-16   max-w-[50%]`}>
                         <div class="spinner flex flex-row gap-2">
                             <div class="bounce1"></div>
                             <div class="bounce2"></div>
