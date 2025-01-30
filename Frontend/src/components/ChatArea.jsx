@@ -82,7 +82,7 @@ const ChatArea = () => {
 
     const ai = async () => {
         setAiON(true)
-        const genAI = new GoogleGenerativeAI("AIzaSyDWmldts9nJ3o9g2jPxVx770plD0cKdKkk");
+        const genAI = new GoogleGenerativeAI("AIzaSyACyb9wx1BnpfUxO5ZAZ-kshXM0D4FxdxM");
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         const prompt = `${chat} + " - format the text with better words only dont increate letters and words if prompt in hinglish so does not convert in hindi or any other language only enhance the words"`;
