@@ -42,7 +42,7 @@ const AI = () => {
         setIsResponse(false)
         setAiRes("")
         setPromts("")
-        const genAI = new GoogleGenerativeAI("AIzaSyDWmldts9nJ3o9g2jPxVx770plD0cKdKkk");
+        const genAI = new GoogleGenerativeAI("AIzaSyACyb9wx1BnpfUxO5ZAZ-kshXM0D4FxdxM");
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
         const prompt = promts;
         const result = await model.generateContent(prompt);
@@ -79,7 +79,7 @@ setIsResponse(true);
 
                     <div className={` ${promtsUser ? "flex" : "hidden"} inline-block  px-6 rounded-xl break-words whitespace-normal  py-[6px]  place-self-end bg-zinc-900 border-[1px] border-zinc-800 text-zinc-300 rounded-br-none relative min-w-16 max-w-[50%] `}>{promtsUser}</div>
 
-                    <div className={`inline-block ${!isResponse ? "flex" : "hidden"}  px-6 rounded-xl break-words whitespace-normal  py-[14px]  place-self-start bg-zinc-900 border-[1px] border-zinc-800 text-white tracking-wide rounded-bl-none relative min-w-16   max-w-[50%]`}>
+                    <div className={`inline-block ${isResponse ? "flex" : "hidden"}  px-6 rounded-xl break-words whitespace-normal  py-[14px]  place-self-start bg-zinc-900 border-[1px] border-zinc-800 text-white tracking-wide rounded-bl-none relative min-w-16   max-w-[50%]`}>
                         <div class="spinner flex flex-row gap-2">
                             <div class="bounce1"></div>
                             <div class="bounce2"></div>
